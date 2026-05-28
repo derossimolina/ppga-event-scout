@@ -7,7 +7,8 @@ from datetime import datetime
 import mcp.server.stdio
 import mcp.types as types
 from mcp.server import Server
-from mcp.server.models import InitializationOptions
+from mcp.server.models import InitializationOptions, ServerCapabilities
+from mcp.types import ToolsCapability
 from tavily import TavilyClient
 
 server = Server("ppga-event-scout")
@@ -292,9 +293,8 @@ async def _run():
             InitializationOptions(
                 server_name="ppga-event-scout",
                 server_version="1.0.0",
-                capabilities=server.get_capabilities(
-                    notification_options=None,
-                    experimental_capabilities={},
+                capabilities=ServerCapabilities(
+                    tools=ToolsCapability(listChanged=False),
                 ),
             ),
         )
