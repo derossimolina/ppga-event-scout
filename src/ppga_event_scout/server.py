@@ -40,6 +40,7 @@ def _format_results(title: str, results: dict, excerpt_len: int = 450) -> str:
     lines = [
         f"# {title}",
         f"_Busca realizada em {datetime.now().strftime('%d/%m/%Y')}_\n",
+        "> ⚠️ **Lembre-se que é fundamental verificar detalhes de cada evento ou congresso antes de pensar em submeter trabalhos ou participar.**\n",
     ]
     for i, r in enumerate(items, 1):
         content = r.get("content", "").strip()
