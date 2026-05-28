@@ -1,0 +1,22 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "ppga-event-scout"
+version = "1.0.0"
+description = "MCP server para busca de congressos e eventos acadêmicos internacionais — PPGA/UCS"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+keywords = ["mcp", "academic", "conferences", "ppga", "ucs", "tavily"]
+dependencies = [
+    "mcp>=1.0.0",
+    "tavily-python>=0.5.0",
+]
+
+[project.scripts]
+ppga-event-scout = "ppga_event_scout.server:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/ppga_event_scout"]
